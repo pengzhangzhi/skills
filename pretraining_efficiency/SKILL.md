@@ -15,7 +15,6 @@
 
 Fix the measured bottleneck. Benchmark every change for throughput **and** loss parity.
 
-## Optimize in this order
 
 ### 1. Remove wasted tokens
 
@@ -23,7 +22,7 @@ Pack variable-length examples into fixed token blocks with correct attention bou
 
 ### 2. Use efficient precision
 
-Use BF16 by default. Ensure parameter all-gathers and gradient reductions do not silently use FP32. Preserve FP32 optimizer state when needed for stability.
+Use BF16 by default. Ensure parameter all-gathers and gradient reductions do not silently use FP32. Preserve FP32 optimizer state when needed for stability. If having advanced GPUs, e.g., H100 or above, and the model is compute bound, try FP8 with transformer engine.
 
 ### 3. Maximize useful microbatch
 
