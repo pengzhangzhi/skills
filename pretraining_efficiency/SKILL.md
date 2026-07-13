@@ -71,6 +71,29 @@ Use asynchronous distributed checkpoints and save immediately before preemption.
 
 Evaluate scaling using time-to-target-loss, not tokens/s alone.
 
+### 11. Exact resume and replay
+
+* Make training and data loading exactly resumable.
+* Make the dataset immutable and versioned:
+```
+shard list + checksums + order
+tokenizer and preprocessing version
+packing configuration
+```
+Checkpoint:
+```
+model, optimizer, scheduler, scaler
+global step and tokens seen
+gradient-accumulation position
+global sample/token cursor
+sampler and packer state
+CPU, CUDA, and data RNG states
+```
+Resume at a batch boundary from the next unseen example, without skipping or replaying data. 
+
+Use `tokens_seen` as the canonical progress and scheduling unit when batch size or world size may change.
+
+
 ## Avoid
 
 * arbitrary dynamic shapes
