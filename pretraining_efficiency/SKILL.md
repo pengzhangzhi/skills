@@ -3,7 +3,7 @@
 
 ## Core rule
 
-**Profile before optimizing.** Track:
+**Profile before optimizing.** Your GPUs are bounded by either memory, long sequence, or compute, large hidden dim. Track:
 
 * useful non-padding tokens/s/GPU
 * MFU
