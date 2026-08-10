@@ -1,0 +1,5 @@
+notify.txt
+logs/
+runs/
+__pycache__/
+*.pyc

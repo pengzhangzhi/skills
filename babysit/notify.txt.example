@@ -1,0 +1,5 @@
+# babysit Slack destination — the FIRST non-# line below is where it posts.
+# Copy this file to notify.txt (gitignored) and set the line to:
+#   a channel id  C…/G…   |   a DM channel id  D…   |   your user id  U…  (to DM you)
+# Also export BABYSIT_SLACK_TOKEN=<your Slack bot token> (scopes: chat:write, im:write).
+CXXXXXXXXXX
