@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kaiming-Inspired ML Paper Coach"
+  short_description: "Shape and draft clear ML paper stories"
+  default_prompt: "Use $kaiming-ml-paper-writing to help me shape the story of my ML paper one decision at a time."
